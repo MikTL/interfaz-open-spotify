@@ -6,6 +6,8 @@ Se trató de copiar la mayoria de los detalles que fueran posibles hacerlo solo 
 
 Con esta práctica, reforcé conocimientos en **Maquetación, "responsividad", Flex-box, Grid CSS, Transiciones, imagenes responsivas, etc.**
 
+### Link del proyecto [Aquí](https://miktl.github.io/interfaz-open-spotify/)
+
 ## Capturas de la interfaz:
 
 ### General
