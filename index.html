@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz Spotify</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="grid-root">
+        <nav class="nav-fixed-top flex a-center">
+            <div class=" logo flex item-center">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="31.98" height="31.98" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                  </svg>
+            </div>
+            <div class="home-search flex">
+                <a class="home flex a-center j-center" href="">
+                    <svg xmlns="http://www.w3.org/2000/svg"     width="24" height="24"  fill="#a7a7a7" class="bi bi-house-door" viewBox="0 0 16 16">
+                    <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
+                  </svg>
+                </a>
+                <div class="search-mas-svg flex">
+                    <form role="search">
+                        <input type="text" name="" id="" placeholder="¿Qué quieres escuchar?" class="input-search">
+                    </form>
+                    <div class="absolute-svg">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#a7a7a7" class="bi bi-search" viewBox="0 0 16 16">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                              </svg>
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <button class="button-user flex a-center j-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#a7a7a7" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <section class="nav-left">
+            <div class="your-library flex a-center">
+                <a class="flex link-library pl-24 gap-17" href="#biblioteca">
+                    <svg role="img" height="24" width="24" class="Svg-ytk21e-0 jAKAlG collection-icon" aria-hidden="true" viewBox="0 0 24 24" fill="#b3b3b3">
+                        <path d="M14.5 2.134a1 1 0 011 0l6 3.464a1 1 0 01.5.866V21a1 1 0 01-1 1h-6a1 1 0 01-1-1V3a1 1 0 01.5-.866zM16 4.732V20h4V7.041l-4-2.309zM3 22a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1zm6 0a1 1 0 01-1-1V3a1 1 0 012 0v18a1 1 0 01-1 1z"></path>
+                    </svg>
+                    <div class="flex a-center">
+                        <span class="d-block height-15"> Tu biblioteca</span>
+                    </div>
+                    
+                </a>
+            </div>
+            <div>
+                <button class="btn-crear-playlist pl-24">
+                    <div class="flex  gap-17">
+                        <div class="svg-crear-playlist flex a-center j-center">
+                            <svg role="img" height="12" width="12" aria-hidden="true" viewBox="0 0 16 16" class="Svg-ytk21e-0 jAKAlG"><path d="M15.25 8a.75.75 0 01-.75.75H8.75v5.75a.75.75 0 01-1.5 0V8.75H1.5a.75.75 0 010-1.5h5.75V1.5a.75.75 0 011.5 0v5.75h5.75a.75.75 0 01.75.75z"></path></svg>
+                        </div>
+                        <div class="flex a-center">
+                            <span>Crear Playlist</span>
+                        </div>
+                    </div>
+                </button>
+            </div>
+            <div>
+                <a href="" class="link-likes pl-24">
+                    <div class="flex gap-17">
+                        <div class="opacity-c">
+                            <div class="flex container-corazon j-center a-center">
+                                <svg role="img" height="12" width="12" aria-hidden="true" viewBox="0 0 16 16"fill="#ddd" class="Svg-ytk21e-0 jAKAlG"><path d="M15.724 4.22A4.313 4.313 0 0012.192.814a4.269 4.269 0 00-3.622 1.13.837.837 0 01-1.14 0 4.272 4.272 0 00-6.21 5.855l5.916 7.05a1.128 1.128 0 001.727 0l5.916-7.05a4.228 4.228 0 00.945-3.577z"></path></svg>
+                            </div>
+                        </div>
+                        <div class="flex a-center">
+                            <span class="height-15">Tus me gusta</span>
+                        </div>
+                    </div> 
+                </a>
+            </div>
+            <div class="flex j-center">
+                <div class="separador "></div>
+            </div>
+            <section class="playlists pl-24">
+                <div>
+                    <a href="">
+                        Mi playlist n.°1
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        Mi playlist n.°2
+                    </a>
+                </div>
+                <div>
+                    <a href="">
+                        Descubrimiento Semanal
+                    </a>
+                </div>
+            </section>
+        </section>
+        <section class="main">
+            <div class="container-main">
+                <div class="grid-container-main">
+                    <section class="card-container-1"> 
+                        <div class="greating-container">
+                            <h2 class="greating">Buenas Tardes</h2>
+                        </div>
+                        <div class="recent-items-container">
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/album1.png" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">The Gods We Can Touch</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/hola_beats.jpeg" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">Hola Beats</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/coding_mode.jpeg" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">Coding Mode</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/globe_beats.jpeg" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">Globe.beats</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/nocopyrightsound.jpeg" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">Nocopyrightsound</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="recent-items flex">
+                                <div class="min-ri ">
+                                    <img class="img-min" src="assets/code-fi.jpeg" alt="album1">
+                                </div>
+                                <div class="name-item-container flex a-center">
+                                    <div>
+                                        <a class="a-name-item" href="#album">
+                                            <p class="p-name-item-firsts">Code-fi/Lofi Beats👨‍💻</p>
+                                        </a>
+                                    </div>
+                                    <div class="btn-play-container">
+                                        <div>
+                                            <button class="btn-play">
+                                                <span class="bg-btn-play a-center j-center">
+                                                    <span>
+                                                        <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                            <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                            </path>
+                                                        </svg>
+                                                    </span>
+                                                </span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-container">
+                        <div>
+                            <div>
+                                <h2 class="section-title">Tus programas</h2>
+                            </div>
+                        </div>
+                        <div class="grid-section">
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/ingles-desde-0.jpeg" alt="Ingles desde 0">                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Ingles desde 0</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Stephen Bain & Daniel Barbour</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-container">
+                        <div>
+                            <div>
+                                <h2 class="section-title">Spotify Playlists</h2>
+                            </div>
+                        </div>
+                        <div class="grid-section">
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/today-top-hits.jpeg" alt="Ingles desde 0">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Today's Top Hits</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Rema & Selena Gomez are on top of the Hottelst</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/rap-caviar.jpeg" alt="Rap Caviar">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">RapCaviar</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">New music from Lil Baby, Juice WRLD and Lil...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-3">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/all-out-2000s.jpeg" alt="todo de los 2010">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">All Out 2010s</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">The biggest songs of the 2010s. Cover:...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-4">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/rock-clasics.jpeg" alt="Rocks clasicos">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Rock Clasic</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Rock legends & epic songs that continue to...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-5">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/exitos_para-relajarse.jpeg" alt="Exitos para relajarse"> 
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                 
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Éxitos para relajarse</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Disfruta de los mejores éxitos relajantes más...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="card-container">
+                        <div>
+                            <div>
+                                <h2 class="section-title">Enfoque</h2>
+                            </div>
+                        </div>
+                        <div class="grid-section">
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/peaceful-piano.jpeg" alt="Peaceful piano">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Peaceful Piano</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Relax and indulge with beautiful  piano pieces</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/deep-focus.jpeg" alt="deep-focus">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Deep Focus</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Keep calm and focus with ambient and post-...</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-3">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/instrumental-study.jpeg" alt="Intrumental-study">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Intrumental-study</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Focus with soft study music in the background.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-4">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/chill-lofi-study-beats.jpeg" alt="Chill lofi study">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Chill lofi study beats</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">The perfect study beats, twenty four seven.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-5">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main">                                        
+                                        <img src="assets/coding_mode.jpeg" alt="Coding mode"> 
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                 
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Coding Mode</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Dedicated to all programmers out there.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="card-container">
+                        <div>
+                            <div>
+                                <h2 class="section-title">Tus artistas favoritos</h2>
+                            </div>
+                        </div>
+                        <div class="grid-section">
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main artist-b-radius">                                        
+                                        <img src="assets/insomnium.jpeg" alt="insomnium">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Insomnium</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Artista</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main artist-b-radius">                                        
+                                        <img src="assets/imagine-dragons.jpeg" alt="Imagine Dragons">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Imagine Dragons</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Artista</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card flex-none-3">
+                                <div style="height: 100%; width: 100%">
+                                    <div class="cont-img-main artist-b-radius">                                        
+                                        <img src="assets/coldplay.jpeg" alt="coldplay">
+                                        <div class="btn-play-container btn-play-absolute">
+                                            <div>
+                                                <button class="btn-play">
+                                                    <span class="bg-btn-play a-center j-center">
+                                                        <span>
+                                                            <svg role="img" height="24" width="24" viewBox="0 0 24 24" class="Svg-ytk21e-0 jAKAlG">
+                                                                <path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z">
+                                                                </path>
+                                                            </svg>
+                                                        </span>
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </div>                                  
+                                    </div>
+                                    <div>
+                                        <a class="a-name-item" href="">
+                                            <div class="p-name-item p-b-title">Coldplay</div>
+                                        </a>
+                                        <div>
+                                            <span class="description-artist">Artista</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div> 
+        </section>
+        <section class="playing-section flex a-center">
+            <div style="width: 30%;">
+                <div class="flex pl-24 a-center">
+                    <div class="cont-img-play-now">
+                        <img src="assets/album-aurora.jpeg" alt="Imagen de reproduccion actual">
+                    </div>
+                    <div class="media-autor">
+                        <div class="title-media-container"><a class="title-media" href="">A Temporary High</a></div>
+                        <div><a  class="name-artist" href="">AURORA</a></div>
+                    </div>
+                    <button class="btn-heart text-after-g text-after-heart">
+                        <input type="checkbox" name="" id="ck" class="checkbox-element">
+                        <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-heart" fill="#a7a7a7"><path d="M1.69 2A4.582 4.582 0 018 2.023 4.583 4.583 0 0111.88.817h.002a4.618 4.618 0 013.782 3.65v.003a4.543 4.543 0 01-1.011 3.84L9.35 14.629a1.765 1.765 0 01-2.093.464 1.762 1.762 0 01-.605-.463L1.348 8.309A4.582 4.582 0 011.689 2zm3.158.252A3.082 3.082 0 002.49 7.337l.005.005L7.8 13.664a.264.264 0 00.311.069.262.262 0 00.09-.069l5.312-6.33a3.043 3.043 0 00.68-2.573 3.118 3.118 0 00-2.551-2.463 3.079 3.079 0 00-2.612.816l-.007.007a1.501 1.501 0 01-2.045 0l-.009-.008a3.082 3.082 0 00-2.121-.861z"></path>
+                        </svg>
+                        <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-heart-2" fill="#1ed760"><path d="M15.724 4.22A4.313 4.313 0 0012.192.814a4.269 4.269 0 00-3.622 1.13.837.837 0 01-1.14 0 4.272 4.272 0 00-6.21 5.855l5.916 7.05a1.128 1.128 0 001.727 0l5.916-7.05a4.228 4.228 0 00.945-3.577z"></path></svg>
+                    </button>
+                    <div>
+                        <div>
+                            <button class="btn-heart text-after-g text-after-p-p">
+                                <input type="checkbox" name="" id="ck" class="checkbox-element">
+                                <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="svg-picture-in-p" fill="#a7a7a7"><path d="M1 3v9h14V3H1zm0-1h14a1 1 0 0 1 1 1v10a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z" fill-rule="nonzero"></path><path d="M10 8h4v3h-4z"></path></g></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width:40%;">
+                <div class="flex-column">
+                    <div class="flex j-center a-center" style="margin-bottom: 8px; height: 34px;">
+                        <div>
+                            <div>
+                                <button class="btn-heart text-after-g text-after-random">
+                                    <input type="checkbox" name="" id="ck" class="checkbox-element">
+                                    <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-picture-in-p" fill="#a7a7a7"><path d="M13.151.922a.75.75 0 10-1.06 1.06L13.109 3H11.16a3.75 3.75 0 00-2.873 1.34l-6.173 7.356A2.25 2.25 0 01.39 12.5H0V14h.391a3.75 3.75 0 002.873-1.34l6.173-7.356a2.25 2.25 0 011.724-.804h1.947l-1.017 1.018a.75.75 0 001.06 1.06L15.98 3.75 13.15.922zM.391 3.5H0V2h.391c1.109 0 2.16.49 2.873 1.34L4.89 5.277l-.979 1.167-1.796-2.14A2.25 2.25 0 00.39 3.5z"></path><path d="M7.5 10.723l.98-1.167.957 1.14a2.25 2.25 0 001.724.804h1.947l-1.017-1.018a.75.75 0 111.06-1.06l2.829 2.828-2.829 2.828a.75.75 0 11-1.06-1.06L13.109 13H11.16a3.75 3.75 0 01-2.873-1.34l-.787-.938z"></path></svg>
+                                </button>
+                                <button class="btn-heart btn-hover text-after-g text-after-before">
+                                    <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-picture-in-p" fill="#a7a7a7"><path d="M3.3 1a.7.7 0 01.7.7v5.15l9.95-5.744a.7.7 0 011.05.606v12.575a.7.7 0 01-1.05.607L4 9.149V14.3a.7.7 0 01-.7.7H1.7a.7.7 0 01-.7-.7V1.7a.7.7 0 01.7-.7h1.6z"></path></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div style="width: 34px;">
+                            <button class="btn-playing flex a-center j-center">
+                                <input type="checkbox" name="" id="ck" class="checkbox-element">
+                                <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-play"><path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z"></path></svg>
+                                <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-heart-2"><path d="M2.7 1a.7.7 0 00-.7.7v12.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7H2.7zm8 0a.7.7 0 00-.7.7v12.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7h-2.6z"></path></svg>
+                            </button>
+                        </div>
+                        <div>
+                            <button class="btn-heart btn-hover text-after-g text-after-next">
+                                <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="" fill="#a7a7a7"><path d="M12.7 1a.7.7 0 00-.7.7v5.15L2.05 1.107A.7.7 0 001 1.712v12.575a.7.7 0 001.05.607L12 9.149V14.3a.7.7 0 00.7.7h1.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7h-1.6z"></path></svg>
+                            </button>
+                            <button class="btn-heart text-after-g text-after-repeat">
+                                <input type="checkbox" name="" id="ck" class="checkbox-element">
+                                <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-picture-in-p" fill="#a7a7a7"><path d="M0 4.75A3.75 3.75 0 013.75 1h8.5A3.75 3.75 0 0116 4.75v5a3.75 3.75 0 01-3.75 3.75H9.81l1.018 1.018a.75.75 0 11-1.06 1.06L6.939 12.75l2.829-2.828a.75.75 0 111.06 1.06L9.811 12h2.439a2.25 2.25 0 002.25-2.25v-5a2.25 2.25 0 00-2.25-2.25h-8.5A2.25 2.25 0 001.5 4.75v5A2.25 2.25 0 003.75 12H5v1.5H3.75A3.75 3.75 0 010 9.75v-5z"></path></svg>
+                            </button>
+                            
+                        </div>
+                    </div>
+                    <div class="flex section-progress">
+                        <div>1:41</div>
+                        <div class="flex a-center main-progress-bar">
+                            <div class="bar-content">
+                                <div class="bar-progress"></div>
+                                <div class="circle-progress-bar"></div>
+                            </div>
+                        </div>
+                        <div>3:23</div>
+                    </div>
+                </div>
+            </div>
+            <div style="width: 30%;">
+                <div class="flex btns-left" style="height: 32px;">
+                    <div>
+                        <button class="btn-no-border-no-bg btn-heart text-after">
+                            <input type="checkbox" name="" id="ck" class="checkbox-element">
+                            <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-picture-in-p" fill="#a7a7a7"><path d="M13.426 2.574a2.831 2.831 0 00-4.797 1.55l3.247 3.247a2.831 2.831 0 001.55-4.797zM10.5 8.118l-2.619-2.62A63303.13 63303.13 0 004.74 9.075L2.065 12.12a1.287 1.287 0 001.816 1.816l3.06-2.688 3.56-3.129zM7.12 4.094a4.331 4.331 0 114.786 4.786l-3.974 3.493-3.06 2.689a2.787 2.787 0 01-3.933-3.933l2.676-3.045 3.505-3.99z"></path></svg>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="btn-no-border-no-bg btn-heart text-after-c-r">
+                            <input type="checkbox" name="" id="ck" class="checkbox-element">
+                            <svg role="img" height="16" width="16" viewBox="0 0 16 16" class="svg-picture-in-p"fill="#a7a7a7"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z"></path></svg>
+                        </button>
+                    </div>
+                    <div>
+                        <button class="btn-no-border-no-bg btn-heart text-after-dispositivos btn-hover">
+                            <svg role="presentation" height="16" width="16" class="svg-picture-in-p" aria-label="Conectar a un dispositivo" viewBox="0 0 16 16" fill="#a7a7a7"><path d="M6 2.75C6 1.784 6.784 1 7.75 1h6.5c.966 0 1.75.784 1.75 1.75v10.5A1.75 1.75 0 0114.25 15h-6.5A1.75 1.75 0 016 13.25V2.75zm1.75-.25a.25.25 0 00-.25.25v10.5c0 .138.112.25.25.25h6.5a.25.25 0 00.25-.25V2.75a.25.25 0 00-.25-.25h-6.5zm-6 0a.25.25 0 00-.25.25v6.5c0 .138.112.25.25.25H4V11H1.75A1.75 1.75 0 010 9.25v-6.5C0 1.784.784 1 1.75 1H4v1.5H1.75zM4 15H2v-1.5h2V15z"></path><path d="M13 10a2 2 0 11-4 0 2 2 0 014 0zm-1-5a1 1 0 11-2 0 1 1 0 012 0z"></path></svg>
+                        </button>
+                    </div>
+                    <div class="flex a-center section-vol">
+                        <div >
+                            <button class="vol-btn flex a-center">
+                                <svg role="presentation" height="16" width="16" aria-label="Volumen medio" id="volume-icon" viewBox="0 0 16 16" class="Svg-ytk21e-0 jAKAlG" fill="#a7a7a7"><path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75 0zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 6.087a4.502 4.502 0 000-8.474v1.65a2.999 2.999 0 010 5.175v1.649z"></path></svg>
+                            </button>
+                        </div>
+                        <div class="flex">
+                            <div class="vol-level-container flex">
+                                <div class="vol-level"></div>
+                                <div class="circle-vol-level"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
