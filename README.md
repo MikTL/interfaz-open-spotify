@@ -1,6 +1,6 @@
 # Interfaz principal de Open Spotify
 
-La aplicacion de Open Spotify no tiene diseño responsivo para pantallas como celulares, tanto en la aplicación real como en esta simulación el responsive esta aproximadamente desde los 760px de ancho hacia arriba.
+La aplicacion de Open Spotify no tiene diseño responsivo para pantallas como celulares, tanto en la aplicación real como en esta simulación. El responsive esta aproximadamente desde los 760px de ancho hacia arriba.
 
 Se trató de copiar la mayoria de los detalles que fueran posibles hacerlo solo con HTML y CSS puro por lo cual carece de dinamismo, los botones y los textos  no llevan a ninguna parte. 
 
